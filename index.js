@@ -74,6 +74,36 @@ function update() {
     //wall 9
     canvascontext.fillStyle = 'green'
     canvascontext.fillRect(860, 490, 480, 10)
+    //wall 10
+    canvascontext.fillStyle = 'green'
+    canvascontext.fillRect(990, 140, 10, 80)
+    //wall 11
+    canvascontext.fillStyle = 'green'
+    canvascontext.fillRect(990, 300, 10, 100)
+    //wall 12
+    canvascontext.fillStyle = 'green'
+    canvascontext.fillRect(990, 130, 360, 10)
+    //wall 13
+    canvascontext.fillStyle = 'green'
+    canvascontext.fillRect(990, 390, 340, 10)
+    //wall 14
+    canvascontext.fillStyle = 'green'
+    canvascontext.fillRect(1110, 210, 10, 190)
+    //wall 15
+    canvascontext.fillStyle = 'green'
+    canvascontext.fillRect(1230, 130, 10, 190)
+    //wall 16
+    canvascontext.fillStyle = 'green'
+    canvascontext.fillRect(1350, 130, 10, 120)
+    //wall 17
+    canvascontext.fillStyle = 'green'
+    canvascontext.fillRect(1330, 390, 10, 310)
+    //wall 18
+    canvascontext.fillStyle = 'green'
+    canvascontext.fillRect(1230, 320, 225, 10)
+    //wall 19
+    canvascontext.fillStyle = 'green'
+    canvascontext.fillRect(1445, 320, 10, 240)
 
 
     // if (
@@ -183,11 +213,81 @@ function wall() {
         y1_position + p1_height > 140
     ){x1_position=0; y1_position=0}
 
-    if (//wall 9 (860, 140, 10, 360)
-        x1_position < 860 + 10 &&
+    if (//wall 9 (860, 490, 480, 10)
+        x1_position < 860 + 480 &&
         x1_position + p1_width > 860 &&
-        y1_position < 140 + 360 &&
+        y1_position < 490 + 10 &&
+        y1_position + p1_height > 490
+    ){x1_position=0; y1_position=0}
+
+    if (//wall 10 (990, 140, 10, 80)
+        x1_position < 990 + 10 &&
+        x1_position + p1_width > 990 &&
+        y1_position < 140 + 80 &&
         y1_position + p1_height > 140
+    ){x1_position=0; y1_position=0}
+
+    if (//wall 11 (990, 300, 10, 100)
+        x1_position < 990 + 10 &&
+        x1_position + p1_width > 990 &&
+        y1_position < 300 + 100 &&
+        y1_position + p1_height > 300
+    ){x1_position=0; y1_position=0}
+
+    if (//wall 12 (990, 130, 360, 10)
+        x1_position < 990 + 360 &&
+        x1_position + p1_width > 990 &&
+        y1_position < 130 + 10 &&
+        y1_position + p1_height > 130
+    ){x1_position=0; y1_position=0}
+
+    if (//wall 13 (990, 390, 340, 10)
+        x1_position < 990 + 340 &&
+        x1_position + p1_width > 990 &&
+        y1_position < 390 + 10 &&
+        y1_position + p1_height > 390
+    ){x1_position=0; y1_position=0}
+
+    if (//wall 14 (1110, 210, 10, 190)
+        x1_position < 1110 + 10 &&
+        x1_position + p1_width > 1110 &&
+        y1_position < 210 + 190 &&
+        y1_position + p1_height > 210
+    ){x1_position=0; y1_position=0}
+
+    if (//wall 15 (1230, 130, 10, 190)
+        x1_position < 1230 + 10 &&
+        x1_position + p1_width > 1230 &&
+        y1_position < 130 + 190 &&
+        y1_position + p1_height > 130
+    ){x1_position=0; y1_position=0}
+
+    if (//wall 16 (1350, 130, 10, 120)
+        x1_position < 1350 + 10 &&
+        x1_position + p1_width > 1350 &&
+        y1_position < 130 + 120 &&
+        y1_position + p1_height > 130
+    ){x1_position=0; y1_position=0}
+
+    if (//wall 17 (1330, 390, 10, 310)
+        x1_position < 1330 + 10 &&
+        x1_position + p1_width > 1330 &&
+        y1_position < 390 + 310 &&
+        y1_position + p1_height > 390
+    ){x1_position=0; y1_position=0}
+
+    if (//wall 18 (1230, 320, 225, 10)
+        x1_position < 1230 + 225 &&
+        x1_position + p1_width > 1230 &&
+        y1_position < 320 + 10 &&
+        y1_position + p1_height > 320
+    ){x1_position=0; y1_position=0}
+
+    if (//wall 19 (1445, 320, 10, 240)
+        x1_position < 1445 + 10 &&
+        x1_position + p1_width > 1445 &&
+        y1_position < 320 + 240 &&
+        y1_position + p1_height > 320
     ){x1_position=0; y1_position=0}
 
 
