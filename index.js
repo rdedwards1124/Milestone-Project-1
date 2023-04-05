@@ -104,6 +104,24 @@ function update() {
     //wall 19
     canvascontext.fillStyle = 'green'
     canvascontext.fillRect(1445, 320, 10, 240)
+    //wall 20
+    canvascontext.fillStyle = 'green'
+    canvascontext.fillRect(1440, 50, 10, 270)
+    //invisi-wall 1
+    canvascontext.fillStyle = 'yellow'
+    canvascontext.fillRect(1340, 550, 110, 10)
+    //invisi-wall 2
+    canvascontext.fillStyle = 'yellow'
+    canvascontext.fillRect(1445, 550, 60, 10)
+    //invisi-wall 3
+    canvascontext.fillStyle = 'yellow'
+    canvascontext.fillRect(1340, 690, 160, 10)
+    //invisi-wall 4
+    canvascontext.fillStyle = 'yellow'
+    canvascontext.fillRect(1340, 550, 10, 140)
+    //invisi-wall 5
+    canvascontext.fillStyle = 'yellow'
+    canvascontext.fillRect(1490, 550, 10, 140)
 
 
     // if (
@@ -290,7 +308,92 @@ function wall() {
         y1_position + p1_height > 320
     ){x1_position=0; y1_position=0}
 
+    if (//wall 20 (1440, 50, 10, 270)
+        x1_position < 1440 + 10 &&
+        x1_position + p1_width > 1440 &&
+        y1_position < 50 + 270 &&
+        y1_position + p1_height > 50
+    ){x1_position=0; y1_position=0}
 
+    if (//invisi-wall 1 (1340, 550, 110, 10)
+        x1_position < 1340 + 110 &&
+        x1_position + p1_width > 1340 &&
+        y1_position < 550 + 10 &&
+        y1_position + p1_height > 550
+    ){x1_position=1405; 
+        y1_position=605;
+        x1_velocity_r=0;
+        x1_velocity_l=0;
+        y1_velocity_d=0;
+        y1_velocity_u=0;
+        document.getElementById("h1").innerHTML = 'YOU WIN!   refresh page to restart';
+    }
+
+    if (//invisi-wall 2 (1445, 550, 60, 10)
+        x1_position < 1445 + 60 &&
+        x1_position + p1_width > 1445 &&
+        y1_position < 550 + 10 &&
+        y1_position + p1_height > 550
+    ){x1_position=1405; 
+        y1_position=605;
+        x1_velocity_r=0;
+        x1_velocity_l=0;
+        y1_velocity_d=0;
+        y1_velocity_u=0;
+        document.getElementById("h1").innerHTML = 'YOU WIN! HIGH SCORE!!!   refresh page to restart';
+    }
+
+    if (//invisi-wall 3 (1340, 690, 160, 10)
+        x1_position < 1340 + 160 &&
+        x1_position + p1_width > 1340 &&
+        y1_position < 690 + 10 &&
+        y1_position + p1_height > 690
+    ){x1_position=1405; 
+        y1_position=605;
+        x1_velocity_r=0;
+        x1_velocity_l=0;
+        y1_velocity_d=0;
+        y1_velocity_u=0;
+    }
+
+    if (//invisi-wall 4 (1340, 550, 10, 140)
+        x1_position < 1340 + 10 &&
+        x1_position + p1_width > 1340 &&
+        y1_position < 550 + 140 &&
+        y1_position + p1_height > 550
+    ){x1_position=1405; 
+        y1_position=605;
+        x1_velocity_r=0;
+        x1_velocity_l=0;
+        y1_velocity_d=0;
+        y1_velocity_u=0;
+    }
+
+    if (//invisi-wall 5 (1490, 550, 10, 140)
+        x1_position < 1490 + 10 &&
+        x1_position + p1_width > 1490 &&
+        y1_position < 550 + 140 &&
+        y1_position + p1_height > 550
+    ){x1_position=1405; 
+        y1_position=605;
+        x1_velocity_r=0;
+        x1_velocity_l=0;
+        y1_velocity_d=0;
+        y1_velocity_u=0;
+    }
+
+    if (//extra-wall (1340, 555, 170, 10)
+        x1_position < 1340 + 170 &&
+        x1_position + p1_width > 1340 &&
+        y1_position < 555 + 10 &&
+        y1_position + p1_height > 555
+    ){x1_position=1405; 
+        y1_position=605;
+        x1_velocity_r=0;
+        x1_velocity_l=0;
+        y1_velocity_d=0;
+        y1_velocity_u=0;
+    }
 
 
     return x1_position, y1_position
