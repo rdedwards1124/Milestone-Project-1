@@ -144,10 +144,10 @@ function update() {
 update()
 
 addEventListener('keydown', (event)=>{
-    if (event.code == 'ArrowRight') x1_velocity_r = 5; canvas_x_vel_r = 5
-    if (event.code == 'ArrowLeft') x1_velocity_l = -5; canvas_x_vel_l = -5
-    if (event.code == 'ArrowDown') y1_velocity_d = 5; canvas_y_vel_d = 5
-    if (event.code == 'ArrowUp') y1_velocity_u = -5; canvas_y_vel_u = -5
+    if (event.code == 'ArrowRight') x1_velocity_r = 4; canvas_x_vel_r = 4
+    if (event.code == 'ArrowLeft') x1_velocity_l = -4; canvas_x_vel_l = -4
+    if (event.code == 'ArrowDown') y1_velocity_d = 4; canvas_y_vel_d = 4
+    if (event.code == 'ArrowUp') y1_velocity_u = -4; canvas_y_vel_u = -4
 })
 
 addEventListener('keyup', (event)=>{
@@ -168,10 +168,10 @@ addEventListener('keyup', (event)=>{
 
 function wall() {
     if (//canvas walls
-        x1_position < 5 ||
-        x1_position + p1_width > canvas.width - 5 ||
-        y1_position < 5 ||
-        y1_position + p1_height > canvas.height - 5
+        x1_position < 0 ||
+        x1_position + p1_width > canvas.width - 0 ||
+        y1_position < 0 ||
+        y1_position + p1_height > canvas.height - 0
     ){x1_position=20; y1_position=20}
 
     if (//wall 1
@@ -326,7 +326,7 @@ function wall() {
         x1_velocity_l=0;
         y1_velocity_d=0;
         y1_velocity_u=0;
-        document.getElementById("h1").innerHTML = 'YOU WIN!   refresh page to restart';
+        document.getElementById("h1").innerHTML = 'YOU WIN! refresh page to restart';
     }
 
     if (//invisi-wall 2 (1445, 550, 60, 10)
@@ -340,7 +340,7 @@ function wall() {
         x1_velocity_l=0;
         y1_velocity_d=0;
         y1_velocity_u=0;
-        document.getElementById("h1").innerHTML = 'YOU WIN! HIGH SCORE!!!   refresh page to restart';
+        document.getElementById("h1").innerHTML = 'YOU WIN! HIGH SCORE!!! refresh page to restart';
     }
 
     if (//invisi-wall 3 (1340, 690, 160, 10)
