@@ -23,19 +23,10 @@ let y1_velocity_u = 0   //  transition of botton pressing smoother
                         //////////////////////////////////////////
 let canvas_x_pos = 0
 let canvas_y_pos = 0
-let canvas_x_vel_r = 0
-let canvas_x_vel_l = 0
-let canvas_y_vel_d = 0
-let canvas_y_vel_u = 0
 
-let green1x = 200
-let green1y = 200
 
 function update() {
-    canvas_x_pos += canvas_x_vel_r
-    canvas_x_pos += canvas_x_vel_l
-    canvas_y_pos += canvas_y_vel_d
-    canvas_y_pos += canvas_y_vel_u
+    
     canvascontext.clearRect(canvas_x_pos, canvas_y_pos, canvas.width, canvas.height)
     canvascontext.fillStyle = 'white'
     canvascontext.fillRect(canvas_x_pos, canvas_y_pos, canvas.width, canvas.height)
@@ -47,116 +38,95 @@ function update() {
     canvascontext.fillRect(x1_position, y1_position, p1_width, p1_height)
     requestAnimationFrame(update)
 
+    function createGreenWall(x,y,w,h) {
+        canvascontext.fillStyle = 'green'
+        canvascontext.fillRect(x, y, w, h)
+        if (
+            x1_position < x + w &&
+            x1_position + p1_width > x &&
+            y1_position < y + h &&
+            y1_position + p1_height > y
+        ){x1_position=0; y1_position=0}
+    }
+
     //wall 1
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(200, 0, 10, 600)
+    createGreenWall(200, 0, 10, 600)
     //wall 2
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(400, 100, 10, 600)
+    createGreenWall(400, 100, 10, 600)
     //wall 3
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(600, 0, 10, 300)
+    createGreenWall(600, 0, 10, 300)
     //wall 4
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(600, 400, 10, 300)
+    createGreenWall(600, 400, 10, 300)
     //wall 5
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(730, 50, 10, 550)
+    createGreenWall(730, 50, 10, 550)
     //wall 6
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(730, 50, 720, 10)
+    createGreenWall(730, 50, 720, 10)
     //wall 7
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(730, 600, 500, 10)
+    createGreenWall(730, 600, 500, 10)
     //wall 8
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(860, 140, 10, 360)
+    createGreenWall(860, 140, 10, 360)
     //wall 9
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(860, 490, 480, 10)
+    createGreenWall(860, 490, 480, 10)
     //wall 10
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(990, 140, 10, 80)
+    createGreenWall(990, 140, 10, 80)
     //wall 11
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(990, 300, 10, 100)
+    createGreenWall(990, 300, 10, 100)
     //wall 12
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(990, 130, 360, 10)
+    createGreenWall(990, 130, 360, 10)
     //wall 13
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(990, 390, 340, 10)
+    createGreenWall(990, 390, 340, 10)
     //wall 14
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(1110, 210, 10, 190)
+    createGreenWall(1110, 210, 10, 190)
     //wall 15
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(1230, 130, 10, 190)
+    createGreenWall(1230, 130, 10, 190)
     //wall 16
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(1350, 130, 10, 120)
+    createGreenWall(1350, 130, 10, 120)
     //wall 17
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(1330, 390, 10, 310)
+    createGreenWall(1330, 390, 10, 310)
     //wall 18
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(1230, 320, 225, 10)
+    createGreenWall(1230, 320, 225, 10)
     //wall 19
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(1445, 320, 10, 240)
+    createGreenWall(1445, 320, 10, 240)
     //wall 20
-    canvascontext.fillStyle = 'green'
-    canvascontext.fillRect(1440, 50, 10, 270)
-    //invisi-wall 1
-    canvascontext.fillStyle = 'yellow'
-    canvascontext.fillRect(1340, 550, 110, 10)
-    //invisi-wall 2
-    canvascontext.fillStyle = 'yellow'
-    canvascontext.fillRect(1445, 550, 60, 10)
-    //invisi-wall 3
-    canvascontext.fillStyle = 'yellow'
-    canvascontext.fillRect(1340, 690, 160, 10)
-    //invisi-wall 4
-    canvascontext.fillStyle = 'yellow'
-    canvascontext.fillRect(1340, 550, 10, 140)
-    //invisi-wall 5
-    canvascontext.fillStyle = 'yellow'
-    canvascontext.fillRect(1490, 550, 10, 140)
+    createGreenWall(1440, 50, 10, 270)
 
+    function createYellowWall(x,y,w,h) {
+        canvascontext.fillStyle = 'yellow'
+        canvascontext.fillRect(x, y, w, h)   
+    }
 
-    // if (
-    //     x1_position < 10 ||
-    //     x1_position + p1_width > canvas.width - 10 ||
-    //     y1_position < 10 ||
-    //     y1_position + p1_height > canvas.height - 10
-    //   ){x1_position=20; y1_position=20}
+    //Win-wall 1
+    createYellowWall(1340, 550, 110, 10)
+    //Win-wall 2
+    createYellowWall(1445, 550, 60, 10)
+    //Win-wall 3
+    createYellowWall(1340, 690, 160, 10)
+    //Win-wall 4
+    createYellowWall(1340, 550, 10, 140)
+    //Win-wall 5
+    createYellowWall(1490, 550, 10, 140)
 
-    // if (
-    //     x1_position < 200 + 10 &&
-    //     x1_position + p1_width > 200 &&
-    //     y1_position < 200 + 200 &&
-    //     y1_position + p1_height > 200
-    //   ){x1_position=0; y1_position=0}
-
-    wall()
+    specialWalls()
 }
 
 update()
 
 addEventListener('keydown', (event)=>{
-    if (event.code == 'ArrowRight') x1_velocity_r = 4; canvas_x_vel_r = 4
-    if (event.code == 'ArrowLeft') x1_velocity_l = -4; canvas_x_vel_l = -4
-    if (event.code == 'ArrowDown') y1_velocity_d = 4; canvas_y_vel_d = 4
-    if (event.code == 'ArrowUp') y1_velocity_u = -4; canvas_y_vel_u = -4
+    if (event.code == 'ArrowRight') x1_velocity_r = 4;
+    if (event.code == 'ArrowLeft') x1_velocity_l = -4;
+    if (event.code == 'ArrowDown') y1_velocity_d = 4;
+    if (event.code == 'ArrowUp') y1_velocity_u = -4;
 })
 
 addEventListener('keyup', (event)=>{
-    if (event.code == 'ArrowRight') x1_velocity_r = 0; canvas_x_vel_r = 0
-    if (event.code == 'ArrowLeft') x1_velocity_l = 0; canvas_x_vel_l = 0
-    if (event.code == 'ArrowDown') y1_velocity_d = 0; canvas_y_vel_d = 0
-    if (event.code == 'ArrowUp') y1_velocity_u = 0; canvas_y_vel_u = 0
+    if (event.code == 'ArrowRight') x1_velocity_r = 0;
+    if (event.code == 'ArrowLeft') x1_velocity_l = 0;
+    if (event.code == 'ArrowDown') y1_velocity_d = 0;
+    if (event.code == 'ArrowUp') y1_velocity_u = 0;
 })
 
+
+// // This is for collision detection!!
 // function intersects(rect1, rect2) {
 //     if (
 //       rect1.x < rect2.x + rect2.width &&
@@ -166,154 +136,13 @@ addEventListener('keyup', (event)=>{
 //     )
 //   }
 
-function wall() {
+function specialWalls() {
     if (//canvas walls
         x1_position < 0 ||
         x1_position + p1_width > canvas.width - 0 ||
         y1_position < 0 ||
         y1_position + p1_height > canvas.height - 0
     ){x1_position=20; y1_position=20}
-
-    if (//wall 1
-        x1_position < 200 + 10 &&
-        x1_position + p1_width > 200 &&
-        y1_position < 0 + 600 &&
-        y1_position + p1_height > 0
-    ){x1_position=0; y1_position=0}
-    
-    if (//wall 2
-        x1_position < 400 + 10 &&
-        x1_position + p1_width > 400 &&
-        y1_position < 100 + 600 &&
-        y1_position + p1_height > 100
-    ){x1_position=0; y1_position=0}
-    
-    if (//wall 3
-        x1_position < 600 + 10 &&
-        x1_position + p1_width > 600 &&
-        y1_position < 0 + 300 &&
-        y1_position + p1_height > 0
-    ){x1_position=0; y1_position=0}
-    
-    if (//wall 4
-        x1_position < 600 + 10 &&
-        x1_position + p1_width > 600 &&
-        y1_position < 400 + 300 &&
-        y1_position + p1_height > 400
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 5 (730, 50, 10, 550)
-        x1_position < 730 + 10 &&
-        x1_position + p1_width > 730 &&
-        y1_position < 50 + 550 &&
-        y1_position + p1_height > 50
-    ){x1_position=0; y1_position=0}
-
-    
-    if (//wall 6 (730, 50, 720, 10)
-        x1_position < 730 + 720 &&
-        x1_position + p1_width > 730 &&
-        y1_position < 50 + 10 &&
-        y1_position + p1_height > 50
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 7 (730, 600, 500, 10)
-        x1_position < 730 + 500 &&
-        x1_position + p1_width > 730 &&
-        y1_position < 600 + 10 &&
-        y1_position + p1_height > 600
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 8 (860, 140, 10, 360)
-        x1_position < 860 + 10 &&
-        x1_position + p1_width > 860 &&
-        y1_position < 140 + 360 &&
-        y1_position + p1_height > 140
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 9 (860, 490, 480, 10)
-        x1_position < 860 + 480 &&
-        x1_position + p1_width > 860 &&
-        y1_position < 490 + 10 &&
-        y1_position + p1_height > 490
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 10 (990, 140, 10, 80)
-        x1_position < 990 + 10 &&
-        x1_position + p1_width > 990 &&
-        y1_position < 140 + 80 &&
-        y1_position + p1_height > 140
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 11 (990, 300, 10, 100)
-        x1_position < 990 + 10 &&
-        x1_position + p1_width > 990 &&
-        y1_position < 300 + 100 &&
-        y1_position + p1_height > 300
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 12 (990, 130, 360, 10)
-        x1_position < 990 + 360 &&
-        x1_position + p1_width > 990 &&
-        y1_position < 130 + 10 &&
-        y1_position + p1_height > 130
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 13 (990, 390, 340, 10)
-        x1_position < 990 + 340 &&
-        x1_position + p1_width > 990 &&
-        y1_position < 390 + 10 &&
-        y1_position + p1_height > 390
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 14 (1110, 210, 10, 190)
-        x1_position < 1110 + 10 &&
-        x1_position + p1_width > 1110 &&
-        y1_position < 210 + 190 &&
-        y1_position + p1_height > 210
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 15 (1230, 130, 10, 190)
-        x1_position < 1230 + 10 &&
-        x1_position + p1_width > 1230 &&
-        y1_position < 130 + 190 &&
-        y1_position + p1_height > 130
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 16 (1350, 130, 10, 120)
-        x1_position < 1350 + 10 &&
-        x1_position + p1_width > 1350 &&
-        y1_position < 130 + 120 &&
-        y1_position + p1_height > 130
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 17 (1330, 390, 10, 310)
-        x1_position < 1330 + 10 &&
-        x1_position + p1_width > 1330 &&
-        y1_position < 390 + 310 &&
-        y1_position + p1_height > 390
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 18 (1230, 320, 225, 10)
-        x1_position < 1230 + 225 &&
-        x1_position + p1_width > 1230 &&
-        y1_position < 320 + 10 &&
-        y1_position + p1_height > 320
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 19 (1445, 320, 10, 240)
-        x1_position < 1445 + 10 &&
-        x1_position + p1_width > 1445 &&
-        y1_position < 320 + 240 &&
-        y1_position + p1_height > 320
-    ){x1_position=0; y1_position=0}
-
-    if (//wall 20 (1440, 50, 10, 270)
-        x1_position < 1440 + 10 &&
-        x1_position + p1_width > 1440 &&
-        y1_position < 50 + 270 &&
-        y1_position + p1_height > 50
-    ){x1_position=0; y1_position=0}
 
     if (//invisi-wall 1 (1340, 550, 110, 10)
         x1_position < 1340 + 110 &&
@@ -394,7 +223,6 @@ function wall() {
         y1_velocity_d=0;
         y1_velocity_u=0;
     }
-
 
     return x1_position, y1_position
 }
