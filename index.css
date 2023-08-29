@@ -3,7 +3,11 @@
     border-color: black;
 } */
 
-h1{
+body{
+    background: black;
+}
+
+#h1{
     color: white;
     text-align: center;
 }
