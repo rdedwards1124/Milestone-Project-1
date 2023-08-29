@@ -1,0 +1,18 @@
+// Imports
+@import "utilities";
+
+// SCSS Variables
+$black-color: black;
+$white-color: white;
+
+
+// Basic page styling; needs compiling
+body {
+    background-color: $black-color;
+    @include set-bg($black-color);
+    h1 {
+        text-align: center;
+        @include set-bg($black-color);
+    }
+}
+

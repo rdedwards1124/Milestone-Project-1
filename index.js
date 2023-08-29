@@ -28,7 +28,7 @@ let canvas_y_pos = 0
 function update() {
     
     canvascontext.clearRect(canvas_x_pos, canvas_y_pos, canvas.width, canvas.height)
-    canvascontext.fillStyle = 'white'
+    canvascontext.fillStyle = 'lightblue'
     canvascontext.fillRect(canvas_x_pos, canvas_y_pos, canvas.width, canvas.height)
     x1_position += x1_velocity_r
     x1_position += x1_velocity_l
@@ -109,6 +109,7 @@ function update() {
     specialWalls()
 }
 
+// Uncomment out update() to activate game!!
 update()
 
 addEventListener('keydown', (event)=>{
