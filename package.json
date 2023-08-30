@@ -1,5 +1,15 @@
 {
   "dependencies": {
     "sass": "^1.66.1"
-  }
+  },
+  "name": "ms1-browser_game",
+  "description": "About the game:\r     - This is a maze game where you try to get to the end of the maze without touching any walls.\r     - This game is best viewed in fullscreen with 90% zoom.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "author": "",
+  "license": "ISC"
 }
